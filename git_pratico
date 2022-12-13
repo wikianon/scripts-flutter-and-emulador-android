@@ -4,13 +4,12 @@ GIT=$(which git)
 
 LINK="https://github.com"
 
-echo "Digite o nome do seu usuario do github.com/usuario: "
+echo "Digite o nome do seu usuario do https://github.com/<seu_usuario_git>: "
 read USER_GIT
 
 USER_LINK=$LINK/$USER_GIT
 
-echo "Digite o caminho da pasta do projeto: "
-read CAMINHO
+read -p "Digite o caminho da pasta do projeto: " CAMINHO
 
 cd $CAMINHO
 
