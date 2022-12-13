@@ -7,7 +7,7 @@
 AVD_EMULATOR=$(which emulator)
 
 #Pega o nome dos emuladores rodando no linux.
-NAME_AVD=$($AVD_EMULATOR -list-avds)
+NAME_AVD=$($AVD_EMULATOR -list-avds | head -1)
 
 #echo "$AVD_NAME"
 #echo "$AVD_EMULATOR"
