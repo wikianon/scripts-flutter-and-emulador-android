@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Pega o nome do emulador Android
+#AVD_NAME=$(ls -a $HOME/.android/avd/*.ini | cut -f2 -d. | cut -f3 -d/)
+
+#Pega o executavel do emulador
+AVD_EMULATOR=$(which emulator)
+
+#Pega o nome dos emuladores rodando no linux.
+NAME_AVD=$($AVD_EMULATOR -list-avds)
+
+#echo "$AVD_NAME"
+#echo "$AVD_EMULATOR"
+
+#Limpa o cache do emulador android
+# -n verifica se variavel nao é nula
+# -z verifica se variavel é nula
+
+if [[ -n $AVD_NAME && -n $AVD_EMULATOR ]]; then
+  $AVD_EMULATOR -avd $NAME_AVD -wipe-data
+fi
+

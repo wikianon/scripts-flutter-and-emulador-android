@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FLUTTER=$(which flutter)
+
+#Limpa os projetos dos arquivos de compilação do flutter
+
+if [ -n $FLUTTER ]; then
+$FLUTTER clean
+
+$FLUTTER packages get
+
+$FLUTTER pub get
+
+$FLUTTER run
+
+fi
